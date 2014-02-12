@@ -26,12 +26,12 @@ def urlhash(hash, metodo):
 if __name__=="__main__":
 
 	parser = optparse.OptionParser("usage: %prog [options] hash")
-	parser.add_option("-H", "--hash", dest="hash", default="False", type="string", help="especifique el hash que desea crackear")
-	parser.add_option("-C", "--cifrado", dest="cifrado", default="True", type="string", help="metodo de cifrado: sha1,  ")
+	parser.add_option("-H", "--hash", dest="hash", default="False", type="string", help="especifique el hash/palabra que desea cifrar")
+	parser.add_option("-C", "--cifrado", dest="cifrado", default="True", type="string", help="metodo de cifrado: sha1, gost, md4, md5, mysql4_mysql5, ntlm, ripemd160, sha1, sha224, sha256, sha384, sha512, whirlpool")
 
 	(options, args) = parser.parse_args()
 
 	if options.hash == "False":
-		parser.error("no hay hash")	
+		parser.error("pulse -h para mostrar menu de ayuda")	
 	
 	urlhash(options.hash, options.cifrado)
